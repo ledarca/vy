@@ -59,8 +59,6 @@ $RsMostrarSi = mysql_query($query_RsMostrarSi, $cnx) or die(mysql_error());
 $row_RsMostrarSi = mysql_fetch_assoc($RsMostrarSi);
 $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
 
-echo "leonard"
-
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
