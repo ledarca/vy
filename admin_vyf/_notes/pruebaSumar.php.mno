@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsVendido" value="name:cliente_id;datatype:int,name:nombre;datatype:string,name:email;datatype:string,name:ci;datatype:int,name:telefono;datatype:real,name:direccion;datatype:blob,name:cantidad;datatype:int,name:catalogo_id;datatype:int,name:imagen700;datatype:string,name:referencia;datatype:string" />
+</info>

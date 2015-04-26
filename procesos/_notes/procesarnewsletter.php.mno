@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsDestino2" value="name:contacto_id;datatype:int,name:correo;datatype:string,name:fecha;datatype:date,name:activar;datatype:int" />
+</info>

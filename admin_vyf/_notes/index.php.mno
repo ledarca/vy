@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsUsuarios" value="name:usuario_adm_id;datatype:int,name:usuario_adm;datatype:string,name:clave_adm;datatype:string,name:nivel_adm;datatype:string,name:activar;datatype:int" />
+</info>

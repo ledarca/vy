@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsPregunta" value="name:pregunta_id;datatype:int,name:produkt_id;datatype:int,name:nombre;datatype:string,name:pregunta;datatype:blob,name:fecha;datatype:date,name:email;datatype:string,name:respuesta_si;datatype:int,name:activar;datatype:int" />
+	<infoitem key="UD_RsProductos" value="name:produkt_id;datatype:int,name:nombre_prod;datatype:string,name:precio_prod;datatype:real,name:activar;datatype:int" />
+	<infoitem key="UD_RsCatalogo" value="name:catalogo_id;datatype:int,name:referencia;datatype:string,name:precio;datatype:real,name:activar;datatype:int" />
+	<infoitem key="UD_RsComprado" value="name:cliente_id;datatype:int,name:nombre;datatype:string" />
+</info>

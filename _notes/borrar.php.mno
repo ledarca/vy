@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsCatalogo" value="name:catalogo_id;datatype:int,name:sujet_id;datatype:int,name:kategorie_id;datatype:int,name:unterkategorie_id;datatype:int,name:referencia;datatype:string,name:imagen60;datatype:string,name:imagen700;datatype:string,name:fechasubida;datatype:date,name:cantidad;datatype:int,name:precio;datatype:real,name:peso;datatype:real,name:color;datatype:string,name:descripcion;datatype:blob,name:activar;datatype:int" />
+</info>

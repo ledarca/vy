@@ -1,0 +1,437 @@
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+body {
+	background-color: #f0f0f0;
+	color: #000;
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+}
+footer{
+	padding: 10px 0;
+	background-color: #6F7D94;
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+header {
+	background-color: #fff;
+	
+	padding:0.2em 0;
+	margin-bottom:0.5em;
+	min-width: 600px;	
+	text-align: center;
+	}
+header h2{ 
+	font-size: 1,2em;
+	margin: 0.1em;
+
+	}
+h1, h2, h3, h4, h5, h6, p, a {
+	color:#484848;
+}
+input {	
+	background-color: #fff;	
+	border: 1px solid #484848;
+	border-radius: 5px;
+	color: #2c2c2c;
+	font-size: x-small;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding: 2px 10px;
+	outline: none;
+	width: 40%;
+}			
+input[type='submit']{
+	background-color: #484848;	
+	color: #fff;
+	cursor: pointer;	
+	font-size: 1em;
+	margin-top: 1em;
+	padding: 3px;
+	width: auto;
+}
+input[type='submit']:hover {
+	background: #ccc;
+	color:#484848;
+}
+section{ 
+	background: #c34c3c;
+}
+section form{ 
+	margin-top: 1em;
+ }
+table{
+	background: white;
+}
+
+/*beg Se usa en el sidebar*/
+#compras{
+	margin-top: 0.5em; 
+	width: 100%;
+}
+#compras a { 
+	float:right;	
+	padding-right: 10px;  	
+}
+#compras ul {
+	color: #484848;
+	padding: 0 10px; 
+	margin-left: 25px !important;
+}
+#compras li{
+	border-bottom: 1px dotted #484848;
+}
+#compras p {
+	padding:0;
+	margin: 8px 0 !important;
+}
+/*end Se usa en el sidebar*/
+
+#sidebar, #content {
+	display:inline-block; 
+	vertical-align:top;
+	}
+#content {
+	background: blue;
+	border: 1px dotted #999;
+	padding: 0;
+	width: 79%;
+}
+#container {
+	width: 99%;
+	max-width: 1260px;
+	min-width: 600px;
+	min-height: 500px;
+	background-color: #ff9; /*COLOR MELON*/
+	margin: .5em auto ; /* el valor automático de los lados, unido a la anchura, centra el diseño. No es necesario si establece la anchura de .container en el 100%. */
+}
+
+/*****************************************COMIENZO DEL FORMADMIN PAGINA INDEX DEL CATALOGO*******************************************/
+#formadmin{
+	font-family: Verdana, arial, Helvetica, sans-serif;
+	background: #ccc;
+	margin: 0 auto;
+	width: 50%;
+	padding: 0.5em 1em;
+	border-radius: 20px;
+	box-shadow: 2px 4px 40px #000;
+}
+#formadmin h1{
+	font-size: 1.5em;
+}
+#formadmin h3 {
+	font-size: 1em;
+}
+#formadmin p {
+	font-size: 0.8em;
+}
+.container_16 {
+	margin: 0 auto;
+	min-width: 380px;
+	max-width: 800px;	
+	padding: 14% 0;
+	min-height: 500px;
+	} /*esto lo utilizamos en la pagina index del admin*/
+/*****************************************FIN DEL FORMADMIN PAGINA INDEX DEL CATALOGO*******************************************/
+
+/*****************************************COMIENZA EL ID PARA EL MENU HORIZONTAL SE USA PARA TODO EL ADMIN*******************************************/
+#menu {
+	font-size: 1em;
+	width: 99%;
+	max-width: 1260px;
+	min-width: 600px;
+	margin: 0 auto;
+	}
+#menu ul {
+	background:#484848; /*color de fondo toda la linea donde esta montado el menu horizontal este color tiene que ser igual al del #menu*/
+	list-style-type: none;
+	margin: 0 0.5% !important;
+	padding: 0.5% 0 !important;
+	width:100%;
+	}
+#menu ul li.nivel1 { 
+	display:inline-block; 
+	vertical-align:top; 
+	width:12%; 
+	margin:0;
+}
+#menu ul li a { 
+	display:block; 
+	text-decoration: none;
+	color: #484848;
+	background-color: #9F3;
+	border: solid 1px #fff;
+	padding: 8px;
+	position: relative;
+}
+#menu ul li:hover {
+	position: relative; 
+}
+#menu ul li a:hover, #menu ul li:hover a.nivel1 {
+	background-color: #9FC;
+	color: #000;
+	position: relative;  
+}
+#menu ul li a.nivel1 {display: block!important;}
+#menu ul li ul {display: none;   width:87%;}
+#menu ul li a:hover ul, #menu ul li:hover ul {
+	display: block;
+	position: absolute; 
+}
+#menu ul li ul li a {
+	width: 100%; 
+	border-top-color: #000;
+}
+#menu ul li ul li a:hover {
+	border-top-color: #000;
+	position: relative;
+}
+table.falsa {
+	border-collapse:collapse;
+	border:0px;
+	float: left;
+	position: relative;
+}
+/************ FINALIZA EL MENU HORIZONTAL SE USA PARA TODO EL ADMIN *****************************/
+
+
+#pregunta{ 
+	margin-top: 0.5em;
+	width: 100%;
+}
+#producto {
+	width:70%;
+}
+#sidebar {
+	background: #99ff00;
+	width: 20%;
+	margin-bottom: 0.5em;	
+	}
+
+
+/*****************************************BEG BOTON GRIS***********************************************************/
+.boton{	
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	width: auto;
+}
+.boton a{
+	background: #484848;
+	border-radius: 5px;
+	color: white;
+	padding: 3px;
+	text-decoration: none;		
+}
+.boton a:hover{
+	color:#484848;
+	background: #ccc;
+	border: 1px solid #484848;
+}
+/*****************************************END BOTON GRIS***********************************************************/
+
+
+/***** Beg. Resumen del catalago  ******/
+.productoText {
+	background: #ccc;
+	margin-top: 1em;
+	width:100%;
+}
+.productoText .textoResumen ul li h3 {
+	font-weight: bold; 
+	background: #484848; 
+	color: white; 
+	text-align: center;
+	margin: 5px;
+}
+.productoText .textoResumen ul{
+	border: 1px dotted #484848;
+	list-style-type: none;
+	padding: 0 5px;
+	margin: 5px;
+}
+.imgResumen img{
+	width: 50%;
+	-moz-transition-propety:-moz-transform;
+	-webkit-transition-propety:-webkit-transform;
+	transition-propety:transform;
+	transition-duration:1s;
+}
+.imgResumen img:hover{
+	border:2px solid #9f0;
+	-moz-transform:scale(3);
+	-moz-transform-origin:top left;
+	-webkit-transform:scale(3);
+	-webkit-transform-origin:top left;
+	transform:scale(3);
+	transform-origin:top left;
+}
+.imgResumen, .textoResumen{
+	width: 35%;
+}
+.textoAcciones {
+	width: 28%;
+}
+.textoAcciones a{
+	background: #f0f0f0;
+	display: block;
+	margin: .5em 0;
+	background-image: url(../../img/index_replace.gif);
+	background-repeat: no-repeat;
+}
+.textoAcciones a > span{
+	margin-left: 30px;
+}
+.textoAcciones a:hover{
+	background: #f09;
+	color: white;
+	text-decoration: none;
+}
+.imgResumen, 
+.textoResumen, 
+.textoAcciones {
+	background: white;
+	display:inline-block; 
+	vertical-align:top; 	
+	text-align: left;
+}
+/***** End. Resumen del catalago  ******/
+
+
+/***** Beg. se usa donde dice registro ******/
+.registro{
+	color:white;
+	clear:both;
+	font-size: 1em;
+	font-weight: bold; 
+	float:right; 
+	margin:0; 
+	padding-right:5px; 	
+}
+/***** End. se usa donde dice registro*/
+
+.primeraLinea{
+	background:#484848; 
+	color:#FFF; 
+	font-size:1em;
+	font-weight: bold; 
+	margin:0; 
+	padding-left:5px; 
+	text-transform: uppercase;
+}
+.segundaLinea {
+	background:#ccc !important; 
+	color:#484848; 
+	font-size:0.9em; 
+	font-weight:bold; 
+	margin:0; 
+	padding-left:5px;
+}
+
+/***************************************** COMIENZO DEL PAGINADOR *******************************************/
+.paginador{	 
+	color: #484848;
+	text-align: center;
+	margin: 0.6em;
+}
+.paginador a {
+	background: #484848;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 0.8em;
+	text-decoration: none;
+	text-align: center;
+	padding: 0 0.5em;
+	margin: 0.1em;
+}
+.paginador a:hover{
+	background: #999;
+	color: #484848;
+}
+.paginadorPrimero, .paginadorAnterior, .paginadorSiguiente, .paginadorUltimo{
+display: inline-block; vertical-align: top; 
+}
+/***************************************** FINAL DEL PAGINADOR *******************************************/
+
+/***************************************** COMIENZO DE CLASE FORMULARIO *******************************************/
+.formulario{ 
+	color:#484848;
+	font-family: Verdana, arial, Helvetica, sans-serif; 
+	font-weight:bold; 
+	margin-bottom: 1em;
+}
+.formulario label {
+	display:block; 
+	font-size:18px;
+}
+.formulario hr{
+	margin: 0px 10px 10px 10px 
+}
+/***************************************** COMIENZO DE CLASE FORMULARIO *******************************************/
+
+/***** Beg. formulario Catalogo *****/
+.formularioCatalogo{
+	background: #ccc;
+	color:#484848;
+	margin-top: .5em;
+}
+.formularioCatalogo h2{
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+	width: 200px;
+}
+.formularioCatalogo h2, .formularioCatalogo select{
+	display: inline-block;
+	vertical-align: top;
+}
+.formularioCatalogo form{
+	border: 1px solid red;
+	margin: 0 auto;
+	width: 50%;
+}
+.formularioCatalogo form input {	
+	background-color: #fff;	
+	border: 1px solid #484848;
+	border-radius: 5px;
+	color: #2c2c2c;
+	font-size: x-small;
+	font-weight: bold;
+	margin-bottom: 1em;
+	padding: 2px 10px;
+	outline: none;
+	width: 40%;
+}			
+.formularioCatalogo form input[type='file'], .formularioCatalogo form input[type='submit']{
+	background-color: #484848;	
+	color: #fff;
+	cursor: pointer;	
+	font-size: 1em;
+	margin-top: 1em;
+	padding: 3px;
+	width: 70%;
+}
+.formularioCatalogo form input[type='file']:hover, .formularioCatalogo form input[type='submit']:hover{
+	background: #ccc;
+	color:#484848;
+}
+.formularioCatalogo form label{
+	border: 1px solid red;
+float: left;
+width: 200px;
+}
+/***** End. formulario Catalogo *****/
+
+
+
+
+
+
+
+
+

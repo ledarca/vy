@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Rscategoria" value="name:unterkategorie_id;datatype:int,name:nombre_subcategoria;datatype:string,name:kategorie_id;datatype:int,name:sujet_id;datatype:int,name:activar;datatype:int" />
+	<infoitem key="UD_RsCategoria" value="name:unterkategorie_id;datatype:int,name:nombre_subcategoria;datatype:string,name:kategorie_id;datatype:int,name:sujet_id;datatype:int,name:activar;datatype:int,name:nombre_categoria;datatype:string" />
+	<infoitem key="UD_Rscatalogo" value="name:catalogo_id;datatype:int,name:referencia;datatype:string,name:imagen700;datatype:string,name:imagen60;datatype:string,name:fechasubida;datatype:date,name:kategorie_id;datatype:int" />
+	<infoitem key="UD_RsCatalogo" value="name:catalogo_id;datatype:int,name:activar;datatype:int,name:descripcion;datatype:blob,name:cantidad;datatype:int,name:fechasubida;datatype:date,name:precio;datatype:real,name:peso;datatype:real,name:color;datatype:string,name:referencia;datatype:string,name:imagen60;datatype:string,name:imagen700;datatype:string,name:unterkategorie_id;datatype:int,name:nombre_subcategoria;datatype:string,name:kategorie_id;datatype:int" />
+	<infoitem key="UD_RsMostrarSi" value="name:nombre_categoria;datatype:string,name:imagen700;datatype:string,name:kategorie_id;datatype:int" />
+</info>

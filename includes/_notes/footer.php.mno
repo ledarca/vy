@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsCms" value="name:cms_id;datatype:int,name:nombre_cms;datatype:string,name:contenido_cms;datatype:string,name:fecha_cms;datatype:date,name:activar;datatype:int" />
+</info>

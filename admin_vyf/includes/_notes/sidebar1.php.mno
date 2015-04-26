@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsPregunta" value="name:Count(vy_cat_productos_pregunta.pregunta_id);datatype:int" />
+	<infoitem key="UD_RsProductos" value="name:produkt_id;datatype:int,name:nombre_prod;datatype:string,name:precio_prod;datatype:real,name:activar;datatype:int" />
+	<infoitem key="UD_RsComprado" value="name:cliente_id;datatype:int,name:nombre;datatype:string" />
+</info>
