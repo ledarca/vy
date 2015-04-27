@@ -55,6 +55,15 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 
   <script src="../js/ajax.js"></script>
   <script src="../js/modernizr-2.6.2.min.js"></script>
+    <style>
+    .thumbformulario 
+    {
+      height: 85px;
+      border: 1px solid #000;
+      margin: 10px 5px 0 0;
+    }
+    </style>
+
 </head>          
 
 <body>
@@ -103,7 +112,32 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
             </select>
           </div>
           <hr>
-          <input type="file" name="foto" />
+          <!-- <input type="file" name="foto" /> -->
+      <input type="file" id="files" name="foto" /> <br />
+        
+    <output id="list"></output>
+      <script>
+        function archivo(evt) {
+          var files = evt.target.files; // FileList object
+          // Obtenemos la imagen del campo "file".
+          for (var i = 0, f; f = files[i]; i++) {
+            //Solo admitimos imágenes.
+            if (!f.type.match('image.*')) {
+              continue;
+            }
+          var reader = new FileReader();
+          reader.onload = (function(theFile) {
+            return function(e) {
+              // Insertamos la imagen
+              document.getElementById("list").innerHTML = ['<img class="thumbformulario" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+            };
+          })(f);
+         reader.readAsDataURL(f);
+        }
+        }
+       document.getElementById('files').addEventListener('change', archivo, false);
+      </script>
+
           <hr>
           <label for="activar">Activar:</label>
           <input name="activar" type="radio" value="1" checked="checked" />

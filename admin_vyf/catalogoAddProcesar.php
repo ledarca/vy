@@ -1,4 +1,4 @@
-<?php //print_r($_FILES); print_r($_POST); 
+<?php //print_r($_FILES); //print_r($_POST); 
 require_once('../Connections/cnx.php');
 require_once('../procesos/funciones.php');
 
