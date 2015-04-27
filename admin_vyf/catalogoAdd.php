@@ -157,8 +157,8 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
           <label for="precio">precio:</label>
           <input name="precio" type="text" value="" maxlength="20">
 
-          <label for="referencia">referencia:</label>
-          <input type="text" name="referencia" value="" size="20">
+<!--           <label for="referencia">referencia:</label>
+          <input type="text" name="referencia" value="" size="20"> -->
 
           <hr><input type="submit" value="Insertar registro">
 
