@@ -43,7 +43,7 @@ $totalRows_RsCiudad = mysql_num_rows($RsCiudad);
 <head>
 <meta charset="utf-8">
 </head>
-Categor&iacute;a:
+
 <select name="categoria" onchange="from(document.form.categoria.value,'categoriaSub','catalogoAddCategoriaSub.php')">
 <option value="0"><h2>Seleccione Categor&iacute;a</h2></option>
 

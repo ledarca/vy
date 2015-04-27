@@ -37,14 +37,12 @@ $Recordset1 = mysql_query($query_Recordset1, $cnx) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 
-/*print_r($_GET);*/?>
+?>
 
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 </head>
-Sub Categor&iacute;a
-
   <select name="categoriaSub">
     <option value="0">Seleccione Sub Categor&iacute;a</option>
     

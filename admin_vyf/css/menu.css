@@ -420,11 +420,14 @@ display: inline-block; vertical-align: top;
 	background: #ccc;
 	color:#484848;
 }
-.formularioCatalogo form label{
+.formularioCatalogo form label {
+	background: #Ccc;
+	color: green;
 	border: 1px solid red;
-float: left;
-width: 200px;
+	float: left;
+	width: 50%;
 }
+
 /***** End. formulario Catalogo *****/
 
 

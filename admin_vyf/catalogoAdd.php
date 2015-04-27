@@ -82,7 +82,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <!--  FINALIZA EL  SIDEBAR1-->
 
     <div id="content">
-      <div class="primeraLinea">Complete los siguientes datos</div>
+       <div class="primeraLinea">Complete los siguientes datos</div>
       <h2 class="segundaLinea">Insertar catálogo</h2>
       
       <section class="formularioCatalogo">
@@ -90,7 +90,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
         <form name="form" action="catalogoAddProcesar.php" method="post" enctype="multipart/form-data">
           <div>
 
-          <h2>Tema:</h2>
+          <label for="tema">Tema</label>
           <select name="tema" onChange="from(document.form.tema.value,'categoria','catalogoAddCategoria.php')">
             <option value="0">Seleccione Tema</option>
             <?php do { ?>
@@ -98,15 +98,17 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
             <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
           </select>
           
+          <label for="categoría">Categor&iacute;a:</label>
           <div id="categoria">
-            <h2>Categor&iacute;a:</h2>
+            
             <select name="categoria">
             <option value="0">Seleccione Categor&iacute;a</option>
             </select>
           </div>
 
+          <label for="sub categoría">Sub Categor&iacute;a:</label>
           <div id="categoriaSub">
-            <h2>Sub Categor&iacute;a:</h2>
+            
             <select name="categoriaSub">
             <option value="0">Seleccione Sub Categor&iacute;a</option>
             </select>
@@ -115,7 +117,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
           <!-- <input type="file" name="foto" /> -->
       <input type="file" id="files" name="foto" /> <br />
         
-    <output id="list"></output>
+      <output id="list"><img src="css/png100.png"></output>
       <script>
         function archivo(evt) {
           var files = evt.target.files; // FileList object
@@ -149,16 +151,13 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
           <input name="color" type="text" value="" maxlength="20">
 
           <label for="descripcion">descripcion:</label>   
-          <input name="descripcion" type="text" value="" maxlength="20">
+          <input name="descripcion" type="text" value="" maxlength="100">
           
           <label for="peso">peso:</label>
           <input name="peso" type="text" value="" maxlength="20">
 
           <label for="precio">precio:</label>
           <input name="precio" type="text" value="" maxlength="20">
-
-<!--           <label for="referencia">referencia:</label>
-          <input type="text" name="referencia" value="" size="20"> -->
 
           <hr><input type="submit" value="Insertar registro">
 
