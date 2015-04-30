@@ -68,7 +68,7 @@ $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
 <head>
   <meta charset="utf-8">
   <title><?php echo "Catálogo ".$row_RsCatalogo['nombre_subcategoria']; ?></title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   <!-- modificado en 2015 -->
   <meta name="description" content="<?php echo "Catálogo ".$row_RsCatalogo['nombre_subcategoria'].", ".$row_RsCatalogo['descripcion']."."; ?>">
   <meta name="distribution" content="global">
   <link rel="shortcut icon"  href="../img/faviconvy.ico"> 

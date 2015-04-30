@@ -33,8 +33,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 $currentPage = $_SERVER["PHP_SELF"];
 
-$maxRows_RsCatalogo = 50;
-$pageNum_RsCatalogo = 0;
+$maxRows_RsCatalogo = 1;
+$pageNum_RsCatalogo = 3;
 if (isset($_GET['pageNum_RsCatalogo'])) {
   $pageNum_RsCatalogo = $_GET['pageNum_RsCatalogo'];
 }
@@ -69,6 +69,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
   }
 }
 $queryString_RsCatalogo = sprintf("&totalRows_RsCatalogo=%d%s", $totalRows_RsCatalogo, $queryString_RsCatalogo);
+
 
 mysql_select_db($database_cnx, $cnx);
 $query_RsMostrarSi = "SELECT DISTINCT vy_cat_kategorie.nombre_categoria, vy_catalogo.imagen700, vy_cat_kategorie.kategorie_id FROM vy_catalogo INNER JOIN vy_cat_unterkategorie ON vy_catalogo.unterkategorie_id = vy_cat_unterkategorie.unterkategorie_id  INNER JOIN vy_cat_kategorie ON vy_cat_unterkategorie.kategorie_id = vy_cat_kategorie.kategorie_id GROUP BY vy_cat_kategorie.nombre_categoria";
@@ -107,27 +108,76 @@ $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
     <?PHP include('includes/sidebar1.php') ?>
     <!--Ejemplo se puede borrar es solo para saber como organizar-->
 
+    <!-- Muestras las categorias existentes para poder separarlas en el main -->
     <?php do { ?>
-      <p><?php echo $row_RsMostrarSi['nombre_categoria']; ?></p>
-      <?php } while ($row_RsMostrarSi = mysql_fetch_assoc($RsMostrarSi)); ?>  
-
+    <!--  -->
+    <a href="catalogores.php?g=<?php echo $row_RsMostrarSi['kategorie_id']; ?>"><?php echo $row_RsMostrarSi['nombre_categoria']; ?></a>
+    <?php } while ($row_RsMostrarSi = mysql_fetch_assoc($RsMostrarSi)); ?>  
+    <!-- Muestras las categorias existentes para poder separarlas en el main -->
     </div>
+
     <!--  FINALIZA EL  SIDEBAR1-->
 
     <div id="content"><!--COMIENZA CONTENIDO-->
       <div class="primeraLinea">Resumen<!--Comienza la primera linea gris-->
         <a href="catalogoAdd.php?"><img src="../img/index_add.gif" width="20" height="19" alt="add" title="Nuevo producto"></a>
+        <?php if (!isset($_GET['g'])){?>
         <p class="registro">Registros <?php echo min($startRow_RsCatalogo + $maxRows_RsCatalogo, $totalRows_RsCatalogo) ?> de <?php echo $totalRows_RsCatalogo ?></p>
+        <?php }?>
       </div><!--finaliza la primera linea gris-->
 
       <div class="segundaLinea"><!--Comienza la segunda linea gris-->
         <div>Tabla de Catalogo</div>
       </div><!--Finaliza la segunda linea gris-->      
-       
-      <!--COMIENZA SECTION--><section>
+      
+
+      <?php 
+      if (isset($_GET['g'])) 
+      {
+        $respuesta = mysql_query("SELECT * FROM vy_catalogo WHERE vy_catalogo.kategorie_id = ".$_GET['g']." ") or die(mysql_error());
+        $row_RsRespuesta = mysql_fetch_assoc($respuesta);
+        $totalRows_RsRespuesta = mysql_num_rows($respuesta);
+      ?>
+      
+        <section><?php do { ?>
+        <div class="productoText">
+          <div class="imgResumen textoResumen">
+            <ul>
+              <li><h3>Imagen</h3></li>
+              <li><img src="../<?php echo $row_RsRespuesta['imagen700'] ;?>" alt="nombre"><?php if ($row_RsRespuesta['activar'] == 0) echo "No Activo"; ?></li>
+            </ul>          
+          </div>
+            
+          <div class="textoResumen">
+            <ul>
+              <li><h3>Ficha Técnica</h3></li>
+              <li>Nombre: esto es una prueba</li>
+              <li>Descripción:<?php echo $row_RsRespuesta['descripcion']?></li>
+              <li>Referencia:<?php echo $row_RsRespuesta['referencia']?></li>
+              <li>Stock:<?php echo $row_RsRespuesta['cantidad'] ?></li>
+              <li><?php echo "Precio: ".number_format($row_RsRespuesta['precio'],2,',','.') ;?></li><hr>
+              <li><?php echo "Peso: ".number_format($row_RsRespuesta['peso'],2,',','.'); ?></li>
+              <li><?php echo "Color: ".$row_RsRespuesta['color'] ;?></li>
+              <li><?php echo "Activo: ";if ($row_RsRespuesta['activar'] == 0) echo "No"; else echo "Si"; ?></li>
+              <li><?php echo "Fecha de subida: ".$row_RsRespuesta['fechasubida'] ;?></li>
+            </ul>
+          </div>
+            
+          <div class="textoResumen textoAcciones">
+            <ul>
+              <li><h3>Acciones</h3></li>
+              <li><a href="catalogoMod.php?id=<?php echo $row_RsRespuesta['catalogo_id']; ?>"><span>Modificar</span></a></li>
+              <li><a href="catalogoDel.php?id=<?php echo $row_RsRespuesta['catalogo_id']; ?>"><span>Eliminar</span></a></li>
+            </ul>
+        </div>
+        <!--FINALIZA SECCION ALINEADA A LA DERECHA--></div><?php } while ($row_RsRespuesta = mysql_fetch_assoc($respuesta ));     ?>
+        </section>          
+      <?php } else  { ?>            
+      
+      <section><!--COMIENZA SECTION-->
         <?php do { ?>
-          
-        <!--COMIENZA SECCION ALINEADA A LA DERECHA--><div class="productoText">
+        <!--COMIENZA SECCION ALINEADA A LA DERECHA-->
+        <div class="productoText">
           <div class="imgResumen textoResumen">
             <ul>
               <li><h3>Imagen</h3></li>
@@ -138,7 +188,7 @@ $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
           <div class="textoResumen">
             <ul>
               <li><h3>Ficha Técnica</h3></li>
-              <li><?php echo "Referencia: ".$row_RsCatalogo['referencia'] ;?></li>
+              <li><?php echo "Referencia: ".$row_RsCatalogo['referencia']?></li>
               <li><?php echo "Cantidad miníma: ".$row_RsCatalogo['cantidad'] ;?></li>
               <li><?php echo "Precio: ".number_format($row_RsCatalogo['precio'],2,',','.') ;?></li>
               <li><?php echo "Peso: ".number_format($row_RsCatalogo['peso'],2,',','.'); ?></li>
@@ -155,8 +205,9 @@ $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
               <li><a href="catalogoMod.php?id=<?php echo $row_RsCatalogo['catalogo_id']; ?>"><span>Modificar</span></a></li>
               <li><a href="catalogoDel.php?id=<?php echo $row_RsCatalogo['catalogo_id']; ?>"><span>Eliminar</span></a></li>
             </ul>
-          </div>
-          <!--FINALIZA SECCION ALINEADA A LA DERECHA--></div>
+        </div>
+        <!--FINALIZA SECCION ALINEADA A LA DERECHA--></div>
+
           <?php } while ($row_RsCatalogo = mysql_fetch_assoc($RsCatalogo)); ?>              
         <div class="paginador"><!--Comienza el paginador-->
           <div class="paginadorPrimero">
@@ -180,7 +231,8 @@ $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
             <?php } // Show if not last page ?>
           </div>
         </div><!--Finaliza el paginador-->
-      <!--FINALIZA SECTION--></section>
+      </section><!--FINALIZA SECTION-->
+      <?php  }  ?> 
     <!--FINALIZA CONTENIDO--></div>
   <!-- end .container --></div>
 </body>
