@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `estados`
 --
 
-CREATE TABLE IF NOT EXISTS `estados` (
+/*CREATE TABLE IF NOT EXISTS `estados` (
   `estadosID` int(2) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `estados` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`estadosID`)
@@ -115,7 +115,7 @@ INSERT INTO `municipios` (`municipiosID`, `estadosID`, `municipios`, `estados`) 
 (32, 3, 'Paéz (Guasdualito)', NULL),
 (33, 3, 'Pedro Camejo (San Juan de Payara)', NULL),
 (34, 3, 'Rómulo Gallegos (Elorza)', NULL),
-(35, 3, 'San Fernando (San Fernando de Apure)', NULL);
+(35, 3, 'San Fernando (San Fernando de Apure)', NULL);*/
 
 -- --------------------------------------------------------
 
