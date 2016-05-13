@@ -1,3 +1,4 @@
+<!-- <-poasooasjas-!--> 
 <?php require_once('Connections/cnx.php'); ?>
 <?php require_once('procesos/funciones.php'); ?>
 <?php
