@@ -253,7 +253,7 @@ table.falsa {
 	margin: 5px;
 }
 .imgResumen img{
-	width: 50%;
+	width: 30%;
 	-moz-transition-propety:-moz-transform;
 	-webkit-transition-propety:-webkit-transform;
 	transition-propety:transform;

@@ -1,9 +1,4 @@
-<?PHP session_start(); 
-	if(isset($_SESSION['carritovyf'])){
-			$carrito_mio=$_SESSION['carritovyf'];
-			if(isset($_POST['cantidad'])){
-			}}
-?>
+<?PHP session_start(); print_r($carrito_mio['$i']); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -59,12 +54,13 @@
 		  $totalgramos=0;
 		  $totalcantidad=0;
 		 				for($i=0;$i<=count($carrito_mio)-1;$i++){
-						 if($carrito_mio[$i]!=NULL){
+						 if($carrito_mio[$i]!=NULL{
+
 	    ?>    
-  
+
 		<div class="descripcion">
 			<ul>
-    			<li><h2><?php print $carrito_mio[$i]['codigo'];?></h2></li>
+    			<li><h2><?php echo $carrito_mio[$i]['codigo'];?></h2></li>
         		<li><h2><?php print $carrito_mio[$i]['producto'];?></h2></li>
         		<li><h2 class="derecha"><?php print number_format($carrito_mio[$i]['precio'], 2, ',', '.');?></h2></li>
         		<li><h2 class="derecha"><?php print number_format($carrito_mio[$i]['cantidad'], 2, ',', '.'); ?></h2></li>
@@ -73,7 +69,7 @@
         		<li><h2 class="derecha"><? print number_format($carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad'], 2, ',', '.'); ?></h2></li>
    			</ul>
 		</div>
-    
+
 	     <? 
      $total= $total+($carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']);
 	 $totalgramos= $totalgramos+(($carrito_mio[$i]['peso'] * $carrito_mio[$i]['cantidad'])/1000);

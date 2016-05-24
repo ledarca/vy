@@ -32,8 +32,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 $currentPage = $_SERVER["PHP_SELF"];
-
-$maxRows_RsCatalogo = 1;
+ # el es $maxRows_RsCatalogo es para colocar la cantidad de registro que quiero que se vea
+$maxRows_RsCatalogo = 5;
 $pageNum_RsCatalogo = 3;
 if (isset($_GET['pageNum_RsCatalogo'])) {
   $pageNum_RsCatalogo = $_GET['pageNum_RsCatalogo'];
@@ -105,25 +105,29 @@ $totalRows_RsMostrarSi = mysql_num_rows($RsMostrarSi);
   
     <!-- beg .sidebar1 -->
     <div id="sidebar">
-    <?PHP include('includes/sidebar1.php') ?>
-    <!--Ejemplo se puede borrar es solo para saber como organizar-->
-
-    <!-- Muestras las categorias existentes para poder separarlas en el main -->
-    <?php do { ?>
-    <!--  -->
-    <a href="catalogores.php?g=<?php echo $row_RsMostrarSi['kategorie_id']; ?>"><?php echo $row_RsMostrarSi['nombre_categoria']; ?></a>
-    <?php } while ($row_RsMostrarSi = mysql_fetch_assoc($RsMostrarSi)); ?>  
-    <!-- Muestras las categorias existentes para poder separarlas en el main -->
+      <h2 class="primeraLinea">MENU</h2>
+      <h3 class="segundaLinea">Categorías</h3>
+      <div id="compras"> <ul>
+        <?php do { ?>  
+          <li><p class="boton"><?php echo $row_RsMostrarSi['nombre_categoria']; ?><a href="catalogores.php?g=<?php  echo $row_RsMostrarSi['kategorie_id']; ?>">ver</a></p></li>
+          <?php } while ($row_RsMostrarSi = mysql_fetch_assoc($RsMostrarSi)); ?> </ul>
+      </div>
     </div>
+    <!-- end .sidebar1 -->
 
-    <!--  FINALIZA EL  SIDEBAR1-->
-
-    <div id="content"><!--COMIENZA CONTENIDO-->
+    <div id="content"><!--COMIENZA CONTENIDO del body-->
       <div class="primeraLinea">Resumen<!--Comienza la primera linea gris-->
         <a href="catalogoAdd.php?"><img src="../img/index_add.gif" width="20" height="19" alt="add" title="Nuevo producto"></a>
         <?php if (!isset($_GET['g'])){?>
-        <p class="registro">Registros <?php echo min($startRow_RsCatalogo + $maxRows_RsCatalogo, $totalRows_RsCatalogo) ?> de <?php echo $totalRows_RsCatalogo ?></p>
-        <?php }?>
+        <p class="registro">Total de Registros <?php echo min($startRow_RsCatalogo + $maxRows_RsCatalogo, $totalRows_RsCatalogo) ?> de <?php echo $totalRows_RsCatalogo ?></p>
+        <?php }  else { /*script que cuenta cuantos registro hay para colocarlos en la liena de RESUMEN*/
+          if (isset($_GET['g'])){
+          $respuesta2 = mysql_query("SELECT Count(vy_catalogo.catalogo_id) as TOTAL FROM vy_catalogo WHERE vy_catalogo.kategorie_id  = ".$_GET['g']." ") or die(mysql_error());
+          $row_RsRespuesta2 = mysql_fetch_assoc($respuesta2);
+          $totalRows_RsRespuesta2 = mysql_num_rows($respuesta2);
+        ?> 
+        <p class="registro">Registros <?php echo $row_RsRespuesta2['TOTAL']?></p>
+        <?php }} ?>
       </div><!--finaliza la primera linea gris-->
 
       <div class="segundaLinea"><!--Comienza la segunda linea gris-->

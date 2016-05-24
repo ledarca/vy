@@ -61,4 +61,3 @@ RewriteRule ^detallePro/.*P([0-9]+)/.*C([0-9]+)\.html$ detallePro.php?cto=$1&dos
  </filesmatch>
  </ifmodule>
 
-

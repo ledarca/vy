@@ -1,5 +1,4 @@
-<?php 	
-session_start();
+<?php session_start();
 require_once('../Connections/cnx.php');
 
 if(isset($_SESSION['carritovyf'])||isset($_POST['producto'])){

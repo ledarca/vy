@@ -1,12 +1,13 @@
 <div id="fondo">
 <div id="menu">
 	<ul>
-    	<li class="nivel1"><a href="principal.php" class="nivel1">Resumen</a></li>
-              <li class="nivel1"><a href="#" class="nivel1">Catálogo</a>
+    	<li class="nivel1"><a href="principal.php" class="nivel1">Inicio</a></li>
+              <li class="nivel1"><a href="catalogoRes.php" class="nivel1">Catálogo</a>
             <!--[if lte IE 6]><a href="http://www.forosdelweb.com" class="nivel1ie">Opci�n 1<table class="falsa"><tr><td><![endif]-->
                 <ul>
-                    <li><li><a href="catalogoRes.php">Resumen</a></li>
-                    <li><li><a href="catalogoAdd.php">Nuevo</a></li>
+                    <!-- <li><a href="catalogoRes.php">Resumen</a></li> -->
+                    <li><a href="catalogoAdd.php">Productos</a></li>
+                    <li><a href="catalogoAdd.php">Categorias</a></li>
                 </ul>
             <!--[if lte IE 6]></td></tr></table></a><![endif]-->
               </li>
